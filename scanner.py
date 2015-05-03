@@ -40,8 +40,8 @@ def get_macs():
 
 
 def get_token():
-    key_file_name = '/root/bin/unique.key'
-
+    key_file_name = os.path.dirname(os.path.abspath(__file__)) + '/unique.key'
+    print(key_file_name)
     if os.path.isfile(key_file_name):
         hash_code = tuple(open(key_file_name, 'r'))[0]
     else:
