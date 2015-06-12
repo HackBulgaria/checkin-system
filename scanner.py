@@ -8,7 +8,7 @@ import sys
 import os
 
 def send_code(mac):
-    url = 'https://data.hackbulgaria.com/api/education/set-check-in/'
+    url = 'https://data.hackbulgaria.com/education/api/set-check-in/'
     values = {
         'mac' : mac,
         'token' : get_token(),
