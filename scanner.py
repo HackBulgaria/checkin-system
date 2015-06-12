@@ -8,7 +8,7 @@ import sys
 import os
 
 def send_code(mac):
-    url = 'https://hackbulgaria.com/set-check-in/'
+    url = 'https://data.hackbulgaria.com/api/education/set-check-in/'
     values = {
         'mac' : mac,
         'token' : get_token(),
@@ -30,7 +30,7 @@ def send_code(mac):
 
 def get_macs():
     print("Hello I will check for macs now!")
-    result = check_output(["nmap", "-sP", "192.168.1.0/24"])
+    result = check_output(["sudo", "nmap", "-sP", "-n", "192.168.0.0/24"])
     #No no not do it this way!
     macs_alive = re.findall(r'[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}', result)
     
